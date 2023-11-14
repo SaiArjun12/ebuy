@@ -13,19 +13,17 @@
 // };
 
 // export default ProductDetails;
-// ProductDetails.js
 
-// ProductDetails.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom'; // Import useParams for v6
+import { useParams } from 'react-router-dom';
 
 const ProductDetails = () => {
-  const { id } = useParams(); // Use useParams for v6
+  const { id } = useParams(); 
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    // Fetch product details based on the productId
+    
     axios.get(`https://dummyjson.com/products/${id}`)
       .then(res => {
         setProduct(res.data);
@@ -42,9 +40,12 @@ const ProductDetails = () => {
   return (
     <div className='product' style={{alignItems:'center',textAlign:'center',marginTop:'100px'}}>
       <img src={product.thumbnail} alt={product.category} />
-      <h2>{product.title}</h2>
-      <p>{product.description}</p>
-      {/* Render other product details */}
+      
+      <h2>Title:{product.title}</h2>
+      <p>Description:{product.description}</p>
+      <p>Rating:{product.rating}</p>
+      <p>Discount Percentage:{product.discountPercentage}</p>
+      
     </div>
   );
 };

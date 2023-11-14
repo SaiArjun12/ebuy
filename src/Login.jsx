@@ -1,6 +1,6 @@
-// Login.js
+
 import React, { useState } from 'react';
-import './Login.css'; // Import your styling here
+import './Login.css';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -10,18 +10,17 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Basic validation example
+    
     if (!username || !password) {
       setError('Please enter both username and password.');
       return;
     }
 
-    // Perform login logic here
-    // For simplicity, we'll just log the credentials for now
+    
     console.log('Username:', username);
     console.log('Password:', password);
 
-    // Reset form and error state
+    
     setUsername('');
     setPassword('');
     setError('');

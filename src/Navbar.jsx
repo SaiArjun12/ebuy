@@ -1,24 +1,32 @@
 // Navbar.js
+
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => (
   <nav className="navbar">
     <ul>
       <li>
-        <Link to="/">Home</Link>
+        <NavLink exact to="/" activeClassName="active">
+          Home
+        </NavLink>
       </li>
       <li>
-        <Link to="/login">Login</Link>
+        <NavLink to="/login" activeClassName="active">
+          Login
+        </NavLink>
       </li>
       <li>
-        <Link to="/contact">Contact</Link>
+        <NavLink to="/contact" activeClassName="active">
+          Contact
+        </NavLink>
       </li>
       <li>
-        <Link to="/cart">Cart</Link>
+        <NavLink to="/cart" activeClassName="active">
+          Cart
+        </NavLink>
       </li>
-      
     </ul>
   </nav>
 );

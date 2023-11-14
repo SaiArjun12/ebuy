@@ -18,7 +18,7 @@ const Home = () => {
       
         axios.get("https://dummyjson.com/products")
           .then(res => {
-            const products = res.data?.products || [];
+            const products = res.data?.products;
       
             setDatas(products);
             setisLoading(false);
@@ -31,7 +31,7 @@ const Home = () => {
       }, []);
       const handleViewDetails = (product) => {
         setSelectedProduct(product);
-        navigate(`/products/${product.id}`);  // Use navigate instead of history.push
+        navigate(`/products/${product.id}`); 
       };
     // const handleAddToCart = (product) => {
     //     addToCart(product);
@@ -65,6 +65,7 @@ const Home = () => {
                     >
                       View Details
                     </button>
+                    <br/>
                 <button  className="button">Add to Cart</button>
               </div>
             </div>
